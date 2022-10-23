@@ -27,9 +27,6 @@ main:
 	subq	$80, %rsp	      # пролог и выравнивание стека
 	movq	%rdi, %r15	      # перемещаем argc в r15
 	movq	%rsi, %r14	      # перемещаем argv в r14
-	movq	%fs:40, %rax
-	movq	%rax, -8(%rbp)	  # кладем канарейку на стек
-	xorl	%eax, %eax	      # зануляем eax
 	movl	$0, -56(%rbp)	  # зануляем file
 	cmpq	$1, %r15	      # сравниваем 1 с argc
 	je	.L22	              # если они равны, переходим по метке
@@ -189,10 +186,6 @@ main:
 	movq	-16(%rbp), %rdi
 	call	free@PLT	      # очищаем память массива b
 	movl	$0, %eax	      # передаем 0 в eax
-	movq	-8(%rbp), %rcx
-	xorq	%fs:40, %rcx
-	je	.L29
-	call	__stack_chk_fail@PLT
 .L29:
 	leave	
     popq %r12
