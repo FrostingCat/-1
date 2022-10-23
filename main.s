@@ -1,4 +1,3 @@
-	.size	print, .-print
 	.section	.rodata
 .LC4:
 	.string	"F1"
