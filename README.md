@@ -22,6 +22,8 @@ b. Убраны лишние макросы;
 
 c. Был произведен рефакторинг за счет максимального использования регистров процессора;
 
+d. Функции были вынесены в отдельный файл func.s, а main находится в файле main.s;
+
 3. **Использованные опции компиляции:** 
 
 a. **Компиляция напрямую из Си кода в машинный:** gcc -O0 -Wall -fno-asynchronous-unwind-tables main.c -o c
@@ -31,3 +33,22 @@ b. **Получение ассемблерного кода:** gcc -O0 -Wall -fn
 c. **Получение исполняемого файла:** gcc assemble.s -o assemble
 
 4. **Тестовое покрытие:** 
+
+Результат в ассемблерном файле:
+
+![assemble1](https://user-images.githubusercontent.com/97798186/197392048-b5417d83-4953-4ef5-b093-027b93a916ca.jpg)
+
+![assemblefile](https://user-images.githubusercontent.com/97798186/197391814-6847ba0c-3bd0-451b-ac61-a33163332430.jpg)
+
+![assembleout](https://user-images.githubusercontent.com/97798186/197391768-c5c41f03-aa74-45ea-9de3-e2dbaa055688.jpg)
+
+Результат в файле Си:
+
+![c1](https://user-images.githubusercontent.com/97798186/197391940-daff5d1c-0027-46db-a962-b810bc639c15.jpg)
+
+![cfile](https://user-images.githubusercontent.com/97798186/197391941-95eb5ac0-6bde-4acb-ba32-49462ad6e107.jpg)
+
+![cout](https://user-images.githubusercontent.com/97798186/197391939-cdf80484-13ad-43b1-aee5-32f0000a7ec0.jpg)
+
+Результаты си-программы и ассемблерной программы совпадают. Причем подать можно не только файл F3, но также файлы F2 и F1.
+
