@@ -212,3 +212,4 @@ print:
     popq %r14
     popq %r15
 	ret	
+	.size	print, .-print
