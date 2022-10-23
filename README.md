@@ -24,10 +24,10 @@ c. Был произведен рефакторинг за счет максим
 
 3. **Использованные опции компиляции:** 
 
-a. **Компиляция напрямую из Си кода в машинный:** gcc -O0 -Wall -fno-asynchronous-unwind-tables main.c -o c_run
+a. **Компиляция напрямую из Си кода в машинный:** gcc -O0 -Wall -fno-asynchronous-unwind-tables main.c -o c
 
 b. **Получение ассемблерного кода:** gcc -O0 -Wall -fno-asynchronous-unwind-tables -S main.c -o assemble.s
 
-c. **Получение исполняемого файла:** gcc assemble.s -o assemble_run
+c. **Получение исполняемого файла:** gcc assemble.s -o assemble
 
 4. **Тестовое покрытие:** 
